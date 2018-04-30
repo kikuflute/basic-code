@@ -1,0 +1,13 @@
+from PIL import Image, ImageDraw, ImageFont
+def add_num(img):
+    draw = ImageDraw.Draw(img)#画画命令
+    myfont = ImageFont.truetype('C:\Windows\Fonts\Arial.ttf',size = 40)
+
+    fillcolor = "#ff0000"
+    width, height = img.size
+    draw.text((width-40,0), '10', font = myfont, fill = fillcolor)#画画内容
+    img.save(r"E:\work\result.jpg")
+    return 0
+if __name__ == '__main__':
+    image = Image.open('E:\\work\\alpha.jpg')
+    add_num(image)
